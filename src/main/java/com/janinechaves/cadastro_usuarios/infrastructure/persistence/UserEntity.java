@@ -1,4 +1,4 @@
-package com.janinechaves.cadastro_usuarios.infrastructure.entitys;
+package com.janinechaves.cadastro_usuarios.infrastructure.persistence;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -8,9 +8,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name = "usuario")
+@Table(name = "USUARIO")
 @Entity
-public class Usuario {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,4 +21,10 @@ public class Usuario {
 
     @Column(name = "nome")
     private String nome;
+
+    public UserEntity(String email, String nome) {
+        this.email = email;
+        this.nome = nome;
+    }
+
 }
